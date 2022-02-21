@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybaitsplusdemo.Web.Mapper.RpUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.mybaitsplusdemo.Web.Entity.RpUser">
+        <id column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="PASSWORD" property="password" />
+        <result column="LOGINNAME" property="loginname" />
+        <result column="USERGROUPS" property="usergroups" />
+        <result column="STATUS" property="status" />
+        <result column="ZSJGDM" property="zsjgdm" />
+        <result column="DYQSD" property="dyqsd" />
+        <result column="USERGROUPS2" property="usergroups2" />
+        <result column="AUTOINDEX" property="autoindex" />
+        <result column="DISTRICTID" property="districtid" />
+        <result column="CODE" property="code" />
+    </resultMap>
+
+</mapper>
