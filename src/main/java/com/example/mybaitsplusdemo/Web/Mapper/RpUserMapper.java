@@ -1,8 +1,12 @@
 package com.example.mybaitsplusdemo.Web.Mapper;
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.example.mybaitsplusdemo.Web.Entity.RpUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +18,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface RpUserMapper extends BaseMapper<RpUser> {
+
+    @Select("select * from RP_USER")
+    public List<RpUser> findAll();
 
 }

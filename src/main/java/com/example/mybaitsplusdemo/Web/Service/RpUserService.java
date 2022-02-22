@@ -4,6 +4,8 @@ import com.example.mybaitsplusdemo.Web.Entity.RpUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -14,5 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface RpUserService extends IService<RpUser> {
+    public List<RpUser> findAll();
+
 
 }

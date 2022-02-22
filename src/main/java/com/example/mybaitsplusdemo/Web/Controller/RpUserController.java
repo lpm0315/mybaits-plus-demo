@@ -2,6 +2,7 @@ package com.example.mybaitsplusdemo.Web.Controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.example.mybaitsplusdemo.Web.Entity.RpUser;
@@ -38,6 +39,27 @@ public class RpUserController {
         rpUser.setUsergroups("海口市");
 
         return rpUserService.getById("{3451810C-5369-87A3-9386-A5B35454B31}");
+    }
+
+    @GetMapping("/test1")
+    public RpUser test1(){
+        rpUserService.findAll().forEach(System.out::println);
+        System.out.println(rpUserService.count());
+        RpUser rpUser = new RpUser();
+        rpUser.setUsergroups("海口市");
+
+        return rpUserService.getById("{3451810C-5369-87A3-9386-A5B35454B31}");
+    }
+
+    @GetMapping("/test2")
+    public void test2(){
+        QueryWrapper<RpUser> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("USERGROUPS","海口市");
+        queryWrapper.eq("STATUS","1");
+        queryWrapper.select("id","name","PASSWORD","USERGROUPS","STATUS");
+        rpUserService.list(queryWrapper).forEach(System.out::println);
+        //System.out.println(rpUserService.count(queryWrapper));
+
     }
 }
 
